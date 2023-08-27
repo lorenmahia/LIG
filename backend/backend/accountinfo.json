@@ -1,0 +1,37 @@
+{
+    "Investor": "LorenInvestmentGroup",
+    "ClientID": 123456,
+    "AccountID": 789012,
+    "cashBalance": 10000,
+    "totalBalance": 10000,
+    "deposits": [
+      {
+        "date": "2023-01-01",
+        "amount": 5000,
+        "depositID": 5565544
+      },
+      {
+        "date": "2023-02-01",
+        "amount": 2500,
+        "depositID":66577
+      }
+    ],
+    "withdrawals": [
+      {
+        "date": "2023-03-01",
+        "amount": 1000,
+        "withdrawalID": 778876
+      }
+    ],
+    "ClientVariables": {
+      "accountType": "Investment Account",
+      "riskLevel": "Moderate",
+      "investmentGoals": "Retirement",
+      "expected_Utility":1.9,
+      "risk_Aversion":1,
+      "loss_Aversion":4.2,
+      "reflection":10,
+      "standard_of_living_risk":1
+
+    }
+  }
