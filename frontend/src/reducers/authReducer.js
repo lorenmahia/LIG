@@ -24,7 +24,7 @@ export const authReducer = (state = initialState, action) => {
                 ...action.payload,
                 isAuthenticated: true,
                 isLoading: false,
-                user: action.payload.user,
+                account: action.payload,
                 passwordResetRequest: "",
             };
 
@@ -59,10 +59,16 @@ export const authReducer = (state = initialState, action) => {
                 user: action.payload,
                 passwordResetRequest: ""
             };
-
+        case actionTypes.REGISTER_ACCOUNT_FAILED:
+            return{
+                ...state,
+                token: null,
+                isAuthenticated: false,
+                isLoading: false,
+                account: null
+            }
         case actionTypes.REGISTER_USER_FAILED:
         case actionTypes.LOGIN_FAILED:
-        case actionTypes.REGISTER_ACCOUNT_FAILED:
         case actionTypes.CONTINUOUS_USER_AUTH_FAILED:
             return {
                 ...state,

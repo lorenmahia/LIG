@@ -67,7 +67,6 @@ class CustomAccountManager():
         return account
 
 class Account(models.Model):
-    account_id = models.ForeignKey(User, on_delete=models.CASCADE)
     ACCOUNT_TYPES = (
         ("Investment", "inv"),
         ("Retirement", "ret"),
@@ -75,14 +74,14 @@ class Account(models.Model):
         ("Futures","fut"),
         ("Forex","frx"),
     )
-    accounttype = models.CharField(db_index=True, max_length=255, choices=ACCOUNT_TYPES,default="Investment")
+    accounttype = models.CharField(db_index=True, max_length=255)
     risklevel= models.CharField(db_index=True, max_length=255)
     investmentgoal = models.CharField(db_index=True, max_length=255)
     exputility = models.IntegerField(db_index=True)
     riskaversion = models.IntegerField(db_index=True)
     lossaversion = models.IntegerField(db_index=True)
-    reflection= models.IntegerField(db_index=True)
-    solvrisk= models.IntegerField(db_index=True)
+    reflection= models.CharField(db_index=True,max_length=255)
+    solvrisk= models.CharField(db_index=True,max_length=255)
     objects = CustomAccountManager()
 
     def __str__(self):

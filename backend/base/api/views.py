@@ -15,7 +15,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from . import utils
-from .serializers import LoginSerializer, UserSerializer, userSignupSerializer,AccountSetUpSerializer
+from .serializers import LoginSerializer, UserSerializer, userSignupSerializer,AccountSetUpSerializer,AccountSerializer
 
 
 class passwordChangeRequestView(generics.GenericAPIView):
@@ -109,10 +109,10 @@ class accountSignUpView(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         account = serializer.save()
 
-        acount_data = Account.objects.get(accounttype = serializer.data['accounttype'])
+        account_data = Account.objects.get(accounttype = serializer.data['accounttype'])
         return Response(
             {
-                "account": AccountSetUpSerializer(
+                "account": AccountSerializer(
                     account, context=self.get_serializer_context()
                 ).data,
                 "message": "account created successfully",

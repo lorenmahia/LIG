@@ -73,8 +73,8 @@ const AccountReg = ({ create_account, isAuthenticated, isLoading, token, account
                                                             <select name="risklevel" value={risklevel} onChange={(e) => handleChange(e)}>
                                                                 <option value="l1">Low Risk : less than 10% of Portfolio</option>
                                                                 <option value="l2">Little Risk :10 - 20% of Portfolio</option>
-                                                                <option value="fut">Medium Risk :20 - 40% of Portfolio</option>
-                                                                <option value="psdo">High Risk :More than 50% of Portfolio</option>
+                                                                <option value="mid">Medium Risk :20 - 40% of Portfolio</option>
+                                                                <option value="high">High Risk :More than 50% of Portfolio</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -92,11 +92,11 @@ const AccountReg = ({ create_account, isAuthenticated, isLoading, token, account
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <label>Expected Utility: In how many months will you need your money<span class="text-danger">*</span></label>
+                                                        <label>In how long will you need your money: Enter number in months<span class="text-danger">*</span></label>
                                                         <div class="input-group">
                                                             <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
-                                                            <input type="number" class="form-control" placeholder="Enter in months"
-                                                                name='expectedutility'
+                                                            <input type="number" pattern="[0-9]*" class="form-control" placeholder="Enter in months"
+                                                                name='exputility'
                                                                 value={exputility}
                                                                 onChange={(e) => handleChange(e)}
                                                             />
@@ -138,7 +138,7 @@ const AccountReg = ({ create_account, isAuthenticated, isLoading, token, account
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <label>What is your net worth<span class="text-danger">*</span></label>
+                                                        <label>What is your net worth(in $USD)<span class="text-danger">*</span></label>
                                                         <div class="input-group">
                                                             <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
                                                             <select type='number' name="solvrisk" value={solvrisk} onChange={(e) => handleChange(e)}>

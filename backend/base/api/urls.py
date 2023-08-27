@@ -10,5 +10,5 @@ urlpatterns = [
     path("checkauth/", views.continuousVerificationView.as_view()),
     path('password-change-request/', views.passwordChangeRequestView.as_view()),
     path('password-change-confirm/', views.PasswordChangeConfirmView.as_view()),
-    path('account/reg/',views.accountSignUpView.as_view()),
+    path('accountreg/',views.accountSignUpView.as_view()),
 ]

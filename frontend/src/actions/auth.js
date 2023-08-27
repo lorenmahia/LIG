@@ -34,7 +34,8 @@ export const create_account = ({accounttype,risklevel,investmentgoal,exputility,
         }
     };
     const body = JSON.stringify({accounttype,risklevel,investmentgoal,exputility,riskaversion,lossaversion,reflection,solvrisk});
-    axios.post('/account/reg/',body,config)
+    console.log(body)
+    axios.post('/accountreg/',body,config)
         .then(res => {
             dispatch({
                 type: actionTypes.REGISTER_ACCOUNT_SUCCESS,

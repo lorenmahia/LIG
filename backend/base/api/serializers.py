@@ -46,13 +46,20 @@ class LoginSerializer(serializers.Serializer):
             return user
         raise serializers.ValidationError("Incorrect Credentials")
 
-class AccountSetUpSerializer(serializers.Serializer):
+class AccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account
+        fields = ["accounttype","risklevel","investmentgoal","exputility","riskaversion","lossaversion","reflection","solvrisk"]
+
+class AccountSetUpSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
         fields = ["accounttype","risklevel","investmentgoal","exputility","riskaversion","lossaversion","reflection","solvrisk"]
         def save(self,**kwargs):
             account = Account(
-                accounttype = self.validated_data("accounttype")
+                accounttype = self.validated_data["accounttype"],
+                risklevel = self.validated_data["risklevel"],
+                investmentgoal = self.validated_data["investmentgoal"]
             )
             account.save()
             return account

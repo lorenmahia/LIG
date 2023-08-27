@@ -50,7 +50,7 @@ const Navbar = ({ logout, isLoading, user, isAuthenticated, token, account }) =>
                         {(token && isAuthenticated && user.isVerified && !account) &&
                             <>
                                 <NavLink to="/transactions" exact className="nav-item nav-link" activeClassName="active">Transactions</NavLink>
-                                <NavLink to="/accountreg" exact className="nav-item nav-link" activeClassName="active">Register Account</NavLink>
+                                <NavLink to="/accountreg" exact className="nav-item nav-link" activeClassName="active">Start Investing</NavLink>
                                 <NavLink to="" className="btn btn-primary nav_btn_wrapper animated__slideInDown" onClick={(e) => handleLogout(e)}>Log Out</NavLink>
                             </>
 
