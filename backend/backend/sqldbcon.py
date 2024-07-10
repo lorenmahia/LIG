@@ -6,7 +6,7 @@ import json
 dataBase = mysql.connector.connect(
   host ="localhost",
   user ="root",
-  passwd ="106873qgrieveQ$",
+  passwd ="",
   database = "loreninvestmentgroup"
 )
  
